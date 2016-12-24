@@ -5,9 +5,12 @@ namespace WilSilva\Payment;
 /**
  *
  */
+
+namespace WilSilva\Payment;
+
 class Payment {
 
-	public function teste() {
-		return 'Hello World';
+	public function requestPayment(PaymentRequest $request) {
+		return $request->makePayment();
 	}
 }
