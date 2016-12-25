@@ -1,6 +1,6 @@
 <?php
 
-namespace WilSilva\Payment\Exception;
+namespace WilSilva\Payment\Exceptions;
 /**
  *
  */

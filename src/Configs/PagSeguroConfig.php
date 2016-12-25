@@ -1,14 +1,14 @@
 <?php
 
-namespace WilSilva\Payment\Config;
+namespace WilSilva\Payment\Configs;
 
 /**
  */
 use PagSeguro\Configuration\Configure;
 use PagSeguro\Library;
 use PagSeguro\Services\Session;
-use WilSilva\Contracts\Config;
-use WilSilva\Exception\PagSeguroSessionException;
+use WilSilva\Payment\Contracts\Config;
+use WilSilva\Payment\Exception\PagSeguroSessionException;
 
 class PagSeguroConfig implements Config {
 

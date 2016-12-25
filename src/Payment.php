@@ -6,8 +6,8 @@ namespace WilSilva\Payment;
  *
  */
 
-use WilSilva\Contracts\PaymentRequest;
-use WilSilva\Contracts\PaymentResponse;
+use WilSilva\Payment\Contracts\PaymentRequest;
+use WilSilva\Payment\Contracts\PaymentResponse;
 
 class Payment {
 
