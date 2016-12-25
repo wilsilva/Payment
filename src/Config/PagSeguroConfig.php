@@ -13,12 +13,21 @@ use WilSilva\Exception\PagSeguroSessionException;
 class PagSeguroConfig implements Config {
 
 	public function __construct() {
+
 		Library::initialize();
-		Library::cmsVersion()->setName(config('payment.pagseguro.company_name'))->setRelease('1.0.0');
+		Library::cmsVersion()
+			->setName(config('payment.pagseguro.company_name'))
+			->setRelease('1.0.0');
+
 		Configure::setEnvironment(config('payment.pagseguro.environment'));
-		Configure::setAccountCredentials(config('payment.pagseguro.email'), (config('payment.pagseguro.environment') == 'production') ? config('payment.pagseguro.token_production') : config('token_sandbox'));
+		Configure::setAccountCredentials(
+			config('payment.pagseguro.email'),
+			(config('payment.pagseguro.environment') == 'production')
+			? config('payment.pagseguro.token_production')
+			: config('token_sandbox'));
 		Configure::setCharset(config('payment.pagseguro.charset')); // UTF-8 or ISO-8859-1
-		Configure::setLog(config('payment.pagseguro.log_active'), config('payment.pagseguro.log_location'));
+		Configure::setLog(config('payment.pagseguro.log_active'),
+			config('payment.pagseguro.log_location'));
 	}
 
 	public function createSession() {
@@ -33,8 +42,13 @@ class PagSeguroConfig implements Config {
 		return Configure::getAccountCredentials();
 	}
 
-	public function setAccountCredentials(string $email, string $token) {
-		Configure::setAccountCredentials($email, $token);
+	public function setAccountCredentials(array $credentials) {
+		if (array_key_exists('email', $credentials) && array_key_exists('token', $credentials)) {
+			Configure::setAccountCredentials($credentials['email'], $credentials['token']);
+		} else {
+			throw new CredentialsInvalidException("Error sending credential parameters.");
+
+		}
 	}
 
 }

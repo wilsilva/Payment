@@ -1,8 +1,8 @@
 <?php
-namespace WilSilva\Contracts;
+namespace WilSilva\Payment\Contracts;
 
-interface Config{
-	
+interface Config {
+
 	public function getAccountCredentials();
-	public function setAccountCredentials(string $email, string $token);
+	public function setAccountCredentials(array $credentials);
 }

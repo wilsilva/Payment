@@ -4,7 +4,7 @@
  *
  */
 
-namespace WilSilva\Contracts;
+namespace WilSilva\Payment\Contracts;
 
 interface PaymentRequest {
 

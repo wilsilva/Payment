@@ -1,5 +1,5 @@
 <?php
-namespace WilSilva\Contracts;
+namespace WilSilva\Payment\Contracts;
 
 interface PaymentResponse {
 
