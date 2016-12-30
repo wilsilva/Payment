@@ -6,11 +6,11 @@ namespace WilSilva\Payment\Facades;
  *
  */
 use Illuminate\Support\Facades\Facade;
-use WilSilva\Payment\Payment;
+use WilSilva\Payment\Payment as Pay;
 
-class PaymentFacade extends Facade {
+class Payment extends Facade {
 
 	protected static function getFacadeAccessor() {
-		return Payment::class;
+		return Pay::class;
 	}
 }
