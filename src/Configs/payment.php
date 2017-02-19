@@ -4,6 +4,7 @@ return [
 
 	"pagseguro" => [
 		"company_name" => "my_company_name",
+		"release" => "1.0.0",
 		"environment" => "sandbox", // or production
 		"email" => "your_pagseguro_email",
 		"token_production" => "your_production_token",

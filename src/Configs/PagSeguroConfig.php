@@ -81,7 +81,7 @@ class PagSeguroConfig implements Config {
 	public function loadAttributesConfig() {
 
 		self::$companyName = config('payment.pagseguro.company_name');
-		self::$release = '1.0.0';
+		self::$release = config('payment.pagseguro.release');
 		self::$environment = config('payment.pagseguro.environment');
 		self::$email = config('payment.pagseguro.email');
 		self::$token = (config('payment.pagseguro.environment') == 'production')
